@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Project Management Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Advanced Project Management Tool</h1>
+        <nav>
+            <button id="cpmBtn" class="active">CPM</button>
+            <button id="pertBtn">PERT</button>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- CPM content -->
+        <section id="cpmSection" class="active">
+            <h2>Critical Path Method (CPM)</h2>
+            <div class="input-container">
+                <input type="text" id="cpmActivity" placeholder="Activity (e.g. A-B)">
+                <input type="number" id="cpmDuration" placeholder="Duration">
+                <button id="cpmAddTask">Add Task</button>
+                <button id="cpmImport">Import CSV</button>
+                <button id="cpmExport">Export CSV</button>
+                <button id="cpmPDF">Generate PDF</button>
+            </div>
+            <table id="cpmTable">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Duration</th>
+                        <th>EST</th>
+                        <th>EFT</th>
+                        <th>LST</th>
+                        <th>LFT</th>
+                        <th>Float</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cpmTableBody"></tbody>
+            </table>
+            <button id="cpmCalculate">Calculate</button>
+            <div id="cpmResults"></div>
+            <div id="cpmDiagram"></div>
+        </section>
+
+        <!-- PERT content -->
+        <section id="pertSection">
+            <h2>Program Evaluation and Review Technique (PERT)</h2>
+            <div class="input-container">
+                <input type="text" id="pertActivity" placeholder="Activity (e.g. A-B)">
+                <input type="number" id="pertOptimistic" placeholder="Optimistic Time">
+                <input type="number" id="pertMostLikely" placeholder="Most Likely Time">
+                <input type="number" id="pertPessimistic" placeholder="Pessimistic Time">
+                <button id="pertAddTask">Add Task</button>
+                <button id="pertImport">Import CSV</button>
+                <button id="pertExport">Export CSV</button>
+                <button id="pertPDF">Generate PDF</button>
+            </div>
+            <table id="pertTable">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Optimistic</th>
+                        <th>Most Likely</th>
+                        <th>Pessimistic</th>
+                        <th>Expected Time</th>
+                        <th>Variance</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="pertTableBody"></tbody>
+            </table>
+            <button id="pertCalculate">Calculate</button>
+            <div id="pertResults"></div>
+            <div id="pertDiagram"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

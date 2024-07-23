@@ -1,0 +1,185 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --background-color: #f5f7fa;
+    --text-color: #333;
+    --border-color: #ddd;
+    --critical-path-color: #ff6b6b;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+button {
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #3cc9a9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button.active {
+    background-color: #3cc9a9;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    display: none;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+section.active {
+    display: block;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 1;
+    min-width: 150px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.delete-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #ff6b6b;
+}
+
+#cpmResults, #pertResults {
+    margin-top: 1rem;
+    font-weight: bold;
+    background-color: #e8f5e9;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+#cpmDiagram, #pertDiagram {
+    margin-top: 2rem;
+    overflow-x: auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+    fill: var(--secondary-color);
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+}
+
+.link {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 2px;
+}
+
+.critical-path {
+    stroke: var(--critical-path-color);
+    stroke-width: 3px;
+}
+
+.node-label {
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.link-label {
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
